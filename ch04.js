@@ -45,3 +45,15 @@ switch(day){
         day = '토요일';
         break;
 }
+
+//삼항연산자 = 조건식 ? 참표현식:거짓표현식
+
+var score = prompt('정수를 입력');
+
+score >= 80 ? alert('합격'):alert('불합격');
+
+//짧은 조건문 = 조건식&&참표현식 or 조건식||거짓조건식
+
+var q = confirm('결제하시겠습니까?');
+
+q||alert('취소되었습니다');
