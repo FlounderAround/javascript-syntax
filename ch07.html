@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //함수의 선언과 호출
+      //   function test() {
+      //     alert('안녕하세요');
+      //   }
+      //   test();
+
+      function coffee() {
+        alert('교실 나가기');
+        alert('카페 가기');
+        alert('아메리카노 주문');
+        alert('커피 마시기');
+      }
+      //매개변수와 리턴 키워드
+      function coffee(menu) {
+        alert('교실 나가기');
+        alert('카페 가기');
+        alert(menu + ' 주문');
+        alert('커피 마시기');
+      }
+
+      function square(x) {
+        return x * x;
+      }
+      var num = prompt('제곱을 구할 수를 입력하세요');
+      alert('결과: ' + square(num));
+
+      function test() {
+        alert('A');
+        return;
+        alert('B');
+      }
+
+      test();
+
+      //변수식 함수선언
+      var plus = function (x, y) {
+        return Number(x) + Number(y);
+      };
+
+      var left = prompt('좌변입력');
+      var right = prompt('우변입력');
+      alert('결과: ' + plus(left, right));
+
+      //내장함수
+      //타이머 함수
+      setTimeout(function () {
+        document.write('3초가 지났습니다');
+      }, 3000);
+
+      var time = 1;
+      var auto = setInterval(function () {
+        document.write(time + '초가 지났습니다<br>');
+        time++;
+      }, 1000);
+
+      setTimeout(function () {
+        clearInterval(auto);
+      }, 10001);
+
+      //기타 함수들
+      //parseInt = int형으로 변형
+      var dollar = 1129;
+      var num = prompt('환전할 달러를 입력하세요');
+      alert('환전금액: ' + dollar * parseInt(num));
+      //NaN(Not a number)
+      if (isNaN(dollar * num)) {
+        alert('정수로 다시 입력하세요');
+      } else {
+        alert('환전금액: ' + dollar * num);
+      }
+
+      //즉시실행함수
+      (function now() {
+        alert('즉시실행');
+      })();
+
+      var time2 = 2;
+      var time2function = setInterval(function () {
+        alert(time2 + '초가 지났습니다<br>');
+        time2 += 2;
+      }, 2000);
+
+      setTimeout(() => {
+        clearInterval(time2function);
+      }, 10001);
+    </script>
+  </head>
+  <body>
+    <input type="button" value="아메리카노" onclick="coffee(this.value)" />
+    <input type="button" value="카페라떼" onclick="coffee(this.value)" />
+    <input type="button" value="바닐라라떼" onclick="coffee(this.value)" />
+    <button onclick="coffee()">커피 사기</button>
+  </body>
+</html>

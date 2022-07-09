@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //객체의 종류
+      var car = {
+        //속성: 값이 함수가 아닌 유형
+        name: 'MINI',
+        model: 'MINI COOPER S',
+        color: ['red', 'green', 'blue'],
+        mileage: 12.3,
+        //메서드: 값이 함수인 유형
+        power: function (x) {
+          if (x == 'on') {
+            alert('POWER ON');
+          } else if (x == 'off') {
+            alert('POWER OFF');
+          }
+        },
+      };
+
+      //객체 자체 호출
+      document.write(car + '<br>');
+      //속성 호출
+      document.write(car.name + '<br>');
+      //메서드 호출
+      car.power('on');
+
+      //변수/배열/객체 비교
+      //변수 = box, 배열 = 기차, 객체 = 표
+
+      //this 예약어
+      var car2 = {
+        //속성: 값이 함수가 아닌 유형
+        name: 'MINI',
+        model: 'MINI COOPER S',
+        color: ['red', 'green', 'blue'],
+        mileage: 12.3,
+        //메서드: 값이 함수인 유형
+        power: function (x) {
+          if (x == 'on') {
+            alert(this.name + ' POWER ON');
+          } else if (x == 'off') {
+            alert(this.name + ' POWER OFF');
+          }
+        },
+      };
+      car2.power('on');
+
+      //생성자 함수
+      //여러 개의 통일된 속성을 지정할 때 사용
+      function Mini(color, wheel, roof) {
+        this.brand = 'Mini 3Door';
+        this.oil = 12.3;
+        this.door = 3;
+        this.color = color;
+        this.wheel = wheel;
+        this.roof = roof;
+
+        this.start = function (x) {
+          if (x == 'on') {
+            alert(this.color + ' / ' + this.brand + ' POWER ON');
+          } else if (x == 'off') {
+            alert('POWER OFF');
+          }
+        };
+      }
+
+      var aCar = new Mini('Island Blue', '16', 'white');
+      var bCar = new Mini('Chili Red', '18', 'black');
+
+      aCar.start('on');
+      bCar.start('on');
+
+      console.log(aCar);
+      console.log(bCar);
+
+      //프로토타입
+      function Mini2(color, wheel, roof) {
+        this.color = color;
+        this.wheel = wheel;
+        this.roof = roof;
+      }
+
+      Mini2.prototype.brand = 'MINI 3Door';
+      Mini2.prototype.oil = 12.3;
+      Mini2.prototype.door = '3';
+
+      Mini2.prototype.starting = function (x) {
+        if (x == 'on') {
+          alert(this.color + ' / ' + this.brand + ' POWER ON');
+        } else if (x == 'off') {
+          alert('POWER OFF');
+        }
+      };
+
+      var dCar = new Mini2('Green', '20', 'white');
+      console.log(dCar);
+      dCar.starting('on');
+
+      function Student(name, korean, english, math) {
+        this.name = name;
+        this.korean = korean;
+        this.english = english;
+        this.math = math;
+      }
+
+      Student.prototype.average = function () {
+        alert(
+          this.name +
+            '의 평균 점수: ' +
+            ((this.korean + this.english + this.math) / 3).toFixed(2)
+        );
+      };
+
+      var st1 = new Student('홍길동', 90, 80, 75);
+      var st2 = new Student('김철수', 100, 80, 90);
+      var st3 = new Student('박영희', 100, 90, 100);
+
+      console.log(st1);
+      st1.average();
+    </script>
+  </head>
+  <body></body>
+</html>
