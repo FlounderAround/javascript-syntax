@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //변수식 선언방법
+      var array1 = [10, 20, 30];
+      alert(array1);
+      //생성자 함수식 선언방법
+      var array2 = new Array(40, 50, 60);
+      alert(array2);
+
+      document.write(array1.concat(array2) + '<br>');
+      //맨 뒤 삭제
+      array2.pop();
+      //맨 앞 삭제
+      array1.shift();
+      //맨 뒤 추가
+      array2.push(30);
+      //맨 앞 추가
+      array1.unshift(10);
+
+      //sort, reverse
+      var array3 = [11, 7, 23, 48, 9, 50];
+      array3.sort();
+      document.write('문자배열: ' + array3 + '<br>');
+      //오름차순
+      array3.sort(function (left, right) {
+        return left - right;
+      });
+      document.write('오름차순: ' + array3 + '<br>');
+      //내림차순
+      array3.sort(function (left, right) {
+        return right - left;
+      });
+      document.write('내림차순: ' + array3 + '<br>');
+
+      //로또 번호 6자리
+      var lotto = [];
+
+      for (var i = 0; i < 6; i++) {
+        var num = Math.floor(Math.random() * 44) + 1;
+        for (var j in lotto) {
+          if (num == lotto[j]) {
+            num = Math.floor(Math.random() * 44) + 1;
+          }
+        }
+        lotto.push(num);
+      }
+
+      lotto.sort(function (left, right) {
+        return left - right;
+      });
+      alert(lotto);
+    </script>
+  </head>
+  <body></body>
+</html>

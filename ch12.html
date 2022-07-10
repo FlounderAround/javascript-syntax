@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //생성자 함수식 선언방식만 존재함
+      var today = new Date();
+      document.write(today + '<br>');
+
+      //특정 날짜 선언, 월이 0~11사이의 숫자
+      var xmas = new Date(2022, 11, 25);
+      document.write(xmas + '<br>');
+
+      document.write(today.toLocaleDateString() + '<br>');
+      document.write(today.toLocaleTimeString() + '<br>');
+
+      //년 월 일
+      var y = today.getFullYear();
+      var m = today.getMonth() + 1;
+      var d = today.getDate();
+      var day = today.getDay(); // 0~6사이의 인덱스
+
+      var week = ['일', '월', '화', '수', '목', '금', '토'];
+      if (m < 10) {
+        m = '0' + m;
+      }
+      if (d < 10) {
+        d = '0' + d;
+      }
+
+      document.write(
+        y + '년 ' + m + '월 ' + d + '일 ' + week[day] + '요일<br>'
+      );
+
+      //시 분 초
+      var h = today.getHours();
+      var m2 = today.getMinutes();
+      var s = today.getSeconds();
+      document.write(h + '시 ' + m2 + '분 ' + s + '초<br>');
+
+      today.setDate(d + 99);
+      document.write(today.toLocaleDateString() + '<br>');
+
+      //------
+      var ySelect = '<select>';
+
+      for (var i = y; i >= 1900; i--) {
+        ySelect += '<option>' + i + '년</option>';
+      }
+
+      ySelect += '</select>';
+      document.write(ySelect);
+    </script>
+  </head>
+  <body></body>
+</html>

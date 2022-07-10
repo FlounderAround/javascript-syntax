@@ -5,7 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script></script>
+    <script>
+      //변수식 선언
+      var str1 = '안녕하세요';
+      //생성자 함수식 선언
+      var str2 = new String('안녕하세요');
+
+      console.log(str1);
+      console.log(str2);
+
+      console.log(typeof str1);
+      console.log(typeof str2);
+
+      console.log(str1.length);
+
+      var password = prompt('비밀번호를 입력하세요');
+      if (8 <= password.length && password.length <= 12) {
+        alert('로그인 성공');
+      } else {
+        alert('로그인 실패');
+      }
+
+      var ID = prompt('주민등록번호 뒤 7자리');
+      if (ID.charAt(0) == 1 || ID.charAt(0) == 3) {
+        alert('남자');
+      } else if (ID.charAt(0) == 2 || ID.charAt(0) == 4) {
+        alert('여자');
+      } else {
+        alert('다시 입력하세요');
+      }
+
+      var device = prompt('접속한 기기 입력');
+      if (device.match('아이폰') || device.match('갤럭시')) {
+        alert('모바일 접속');
+      } else {
+        alert('모바일 접속 아님');
+      }
+
+      var birth = prompt('주민등록번호 첫 6자리');
+      if (birth.length == 6) {
+        var month = birth.substr(2, 2);
+        var day = birth.substr(4, 2);
+        alert('당신의 생일: ' + month + '월 ' + day + '일');
+      } else {
+        alert('다시 입력하세요');
+      }
+
+      var number = prompt('쿠폰 번호 입력');
+      if (number.length == 8) {
+        alert('쿠폰번호: ' + number.toUpperCase());
+      } else {
+        alert('8자리로 다시 입력하세요');
+      }
+
+      var first = prompt('주민번호 앞자리');
+      var last = prompt('주민번호 뒷자리');
+
+      if (first.length == 6 && last.length == 7) {
+        if (last.charAt(0) == 1 || last.charAt(0) == 2) {
+          alert(
+            '당신의 생일: 19' +
+              first.substr(0, 2) +
+              '년' +
+              first.substr(2, 4) +
+              '월 ' +
+              first.substr(4, 2) +
+              '일'
+          );
+        } else if (first.charAt(0) == 3 || first.charAt(0) == 4) {
+          alert(
+            '당신의 생일: 20' +
+              first.substr(0, 2) +
+              '년 ' +
+              first.substr(2, 4) +
+              '월 ' +
+              first.substr(4, 2) +
+              '일'
+          );
+        } else {
+          alert('잘못 입력됨');
+        }
+      } else {
+        alert('잘못 입력됨');
+      }
+    </script>
   </head>
   <body></body>
 </html>
