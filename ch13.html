@@ -12,6 +12,11 @@
     </style>
     <script>
       document.write('innerWidth : ' + window.innerWidth + '<br>');
+      window.open('http://youtube.com', '', 'width=300,height=300', true);
+      var newWindow = window.open('', '', 'width=300,height=300');
+      setTimeout(function () {
+        newWindow.close();
+      }, 3000);
     </script>
   </head>
   <body></body>
