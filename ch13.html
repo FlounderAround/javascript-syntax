@@ -28,6 +28,15 @@
       setTimeout(function(){
         window.self.close();
       }, 5001);
+
+      var newWindow2 = window.open('','','width=300,height=300');
+
+      newWindow2.moveTo(300,300);
+
+      setInterval(function(){
+        newWindow2.moveBy(20,20);
+      },1000);
+      
     </script>
   </head>
   <body></body>
