@@ -31,10 +31,12 @@
 
       var newWindow2 = window.open('','','width=300,height=300');
 
-      newWindow2.moveTo(300,300);
+      newWindow2.moveTo(300,300); //위치 변경
+      newWindow2.resizeTo(500,500); //크기 변경
 
       setInterval(function(){
-        newWindow2.moveBy(20,20);
+        //newWindow2.moveBy(20,20);
+        newWindow2.resizeBy(10,10);
       },1000);
       
     </script>
