@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var newWindow = window.open('','','width=300, height=300');
+
+        // //가로폭 반환
+        // var w = screen.width;
+        // //높이 반환
+        // var h = screen.height;
+
+        // setTimeout(function(){
+        //     newWindow.resizeTo(w,h);
+        // }, 3000)
+
+        // var txt = '';
+        
+        // txt += '<p> 브라우저 코드명: '+navigator.appCodeName+"</p>"
+        // txt += '<p> 브라우저 명: '+navigator.appName+"</p>"
+        // txt += '<p> 브라우저 버전: '+navigator.appVersion+"</p>"
+        // txt += '<p> 브라우저 언어: '+navigator.language+"</p>"
+        // txt += '<p> 브라우저 에이전트: '+navigator.userAgent+"</p>"
+        
+        // document.write(txt);
+
+        // //자바가 사용 가능한지 확인함
+        // document.write(navigator.javaEnabled());
+
+        //모바일 이름
+        var moblie_keys = new Array('iPhone','Android');
+
+        for(var i in moblie_keys){
+            if(navigator.userAgent.match(moblie_keys[i])){
+                alert('모바일 기기에 접속했습니다.');
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

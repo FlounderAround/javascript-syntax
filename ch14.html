@@ -6,16 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        var url = location.href;
+        // var url = location.href;
 
-        document.write(url);
+        // document.write(url);
 
-        setTimeout(function(){
-            location.href = 'http://youtube.com';
-        }, 3000)
+        // setTimeout(function(){
+        //     location.href = 'http://youtube.com';
+        // }, 3000)
+
+        // var num = 1;
+        // setInterval(function(){
+        //     document.write('<p>'+num+'초가 지났습니다</p>');
+
+        //     num++;
+        // },1000);
+
+        // setTimeout(function(){
+        //     location.reload();
+        // },10001);
+
+        function back(){
+            history.back();
+        }
+        //주소내역 개수를 반환하는 속성
+        function num(){
+            alert(history.length);
+        }
     </script>
 </head>
 <body>
-    
+    <h1>
+        <a href="ch14_test.html">테스트페이지가기</a>
+    </h1>
+    <button onclick="back()">뒤로가기</button>
+    <button onclick="num()">주소내역개수확인하기</button>
 </body>
 </html>
