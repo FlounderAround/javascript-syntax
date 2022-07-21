@@ -20,6 +20,17 @@
         h2.innerHTML = '제목태그2';
 
         document.body.appendChild(h2);
+
+        var img = document.createElement('img');
+
+        img.setAttribute('src', 'test.png');
+        img.setAttribute('width', 300);
+
+        document.body.appendChild(img);
+
+        var w = img.getAttribute('width');
+        alert(w);
+
     </script>
 
 </body>
